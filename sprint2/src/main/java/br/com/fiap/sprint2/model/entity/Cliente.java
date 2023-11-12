@@ -75,9 +75,20 @@ public class Cliente {
 		this.rg = rg;
 	}
 
-	public String getConfirmMail() {
-		return confirmMail;
-	}
+	public void setConfirmMail(String confirmMail) {
+        this.confirmMail = confirmMail;
+    }
+    public boolean verifMail(String mail, String confirmMail) {
+        return mail.equals(confirmMail);
+    }
+    public void returnVerifMail(String mail, String confirmMail) {
+        if (verifMail(mail, confirmMail) == false) {
+            System.out.println("Email incorreto!!!!!!");
+        }
+        else {
+            System.out.println("Emails iguais !");
+        }
+    }
 
 	public void setConfirmMail(String confirmMail) {
 		this.confirmMail = confirmMail;
@@ -97,6 +108,17 @@ public class Cliente {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public boolean verifPass(String password, String confirmPass) {
+	    return password.equals(confirmPass);
+	}
+
+	public void returnVerifPass(String password, String confirmPass) {
+	    if (!verifPass(password, confirmPass)) {
+	        System.out.println("Senha incorreta!!!!!!");
+	    } else {
+	        System.out.println("Senhas iguais!");
+	    }
 	}
 	
 }

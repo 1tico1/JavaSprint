@@ -21,9 +21,8 @@ public class Cliente {
 	@NotBlank
 	
 	public Cliente() {}
-
-	public Cliente(long id, String name, String cpf, String mail, String rg, String confirmMail, String confirmPass,
-			String password) {
+	public Cliente(long id, @NotBlank String name, @NotBlank String cpf, @NotBlank String mail, @NotBlank String rg,
+			@NotBlank String confirmMail, @NotBlank String confirmPass, @NotBlank String password) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -34,91 +33,53 @@ public class Cliente {
 		this.confirmPass = confirmPass;
 		this.password = password;
 	}
-
 	public long getId() {
 		return id;
 	}
-
 	public void setId(long id) {
 		this.id = id;
 	}
-
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
 	public String getCpf() {
 		return cpf;
 	}
-
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-
 	public String getMail() {
 		return mail;
 	}
-
 	public void setMail(String mail) {
 		this.mail = mail;
 	}
-
 	public String getRg() {
 		return rg;
 	}
-
 	public void setRg(String rg) {
 		this.rg = rg;
 	}
-
-	public void setConfirmMail(String confirmMail) {
-        this.confirmMail = confirmMail;
-    }
-    public boolean verifMail(String mail, String confirmMail) {
-        return mail.equals(confirmMail);
-    }
-    public void returnVerifMail(String mail, String confirmMail) {
-        if (verifMail(mail, confirmMail) == false) {
-            System.out.println("Email incorreto!!!!!!");
-        }
-        else {
-            System.out.println("Emails iguais !");
-        }
-    }
-
+	public String getConfirmMail() {
+		return confirmMail;
+	}
 	public void setConfirmMail(String confirmMail) {
 		this.confirmMail = confirmMail;
 	}
-
 	public String getConfirmPass() {
 		return confirmPass;
 	}
-
 	public void setConfirmPass(String confirmPass) {
 		this.confirmPass = confirmPass;
 	}
-
 	public String getPassword() {
 		return password;
 	}
-
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public boolean verifPass(String password, String confirmPass) {
-	    return password.equals(confirmPass);
-	}
-
-	public void returnVerifPass(String password, String confirmPass) {
-	    if (!verifPass(password, confirmPass)) {
-	        System.out.println("Senha incorreta!!!!!!");
-	    } else {
-	        System.out.println("Senhas iguais!");
-	    }
-	}
-	
 }
+	
